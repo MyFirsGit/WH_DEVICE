@@ -1,0 +1,24 @@
+﻿  TIM.cpp
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\tim.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\serialport.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\afclogapi.h(9): warning C4005: “_AFXDLL”: 宏重定义
+          命令行参数: 参见前面的“_AFXDLL”定义
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\tim.cpp(45): warning C4800: “BOOL”: 将值强制为布尔值“true”或“false”(性能警告)
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\tim.cpp(50): warning C4244: “参数”: 从“DWORD”转换到“WORD”，可能丢失数据
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\tim.cpp(56): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\tim.cpp(132): warning C4553: “==”: 运算符不起任何作用；是否是有意使用“=”的?
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\tim.cpp(153): warning C4553: “==”: 运算符不起任何作用；是否是有意使用“=”的?
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\tim.cpp(196): warning C4553: “==”: 运算符不起任何作用；是否是有意使用“=”的?
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\tim.cpp(484): warning C4800: “byte”: 将值强制为布尔值“true”或“false”(性能警告)
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\tim.cpp(912): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\tim.cpp(1299): warning C4244: “初始化”: 从“DWORD”转换到“byte”，可能丢失数据
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\tim.cpp(1372): warning C4244: “初始化”: 从“DWORD”转换到“byte”，可能丢失数据
+  SerialPort.cpp
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\serialport.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\serialport.cpp(11): warning C4627: “#include "SerialPort.h"”: 在查找预编译头使用时跳过
+          将指令添加到“StdAfx.h”或重新生成预编译头
+c:\users\huyon\desktop\tim_legate_20190426_v3\tim\serialport.cpp(13): warning C4627: “#include <iostream>”: 在查找预编译头使用时跳过
+          将指令添加到“StdAfx.h”或重新生成预编译头
+  正在生成代码...
+     正在创建库 ../lib/TIM.lib 和对象 ../lib/TIM.exp
+  TIM.vcxproj -> C:\Users\huyon\Desktop\TIM_Legate_20190426_V3\TIM\..\bin\TIM.dll

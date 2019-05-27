@@ -1,0 +1,7 @@
+2019-02-22 09:19:09.941 [42856]SYSTEM: --------begin--------
+2019-02-22 09:19:09.941 [42856]SYSTEM: Thread(CLog: 0xC734) CreateThread ok
+2019-02-22 09:19:09.941 [42856]SYSTEM: CommManager start
+2019-02-22 09:19:09.941 [50996]SYSTEM: Thread(CLog: 0xC734) begins
+2019-02-22 09:19:09.961 [42856]SYSTEM: CommManager exit
+2019-02-22 09:19:09.961 [50996]SYSTEM: Thread(CLog: 0xC734) ends
+2019-02-22 09:19:09.961 [42856]SYSTEM: --------end--------

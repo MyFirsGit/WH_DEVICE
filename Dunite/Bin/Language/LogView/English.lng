@@ -1,0 +1,81 @@
+[Language]
+Language=1033
+Description=English
+FontName=Tahoma
+FontSize=8
+
+[Text]
+C_COLUMNS = 6
+0 = #
+1 = Date
+2 = Time
+3 = Source
+4 = Type
+5 = Comment
+6 = Open File Ctrl+0
+7 = Find Ctrl+F
+8 = Clear Display Ctrl+D
+9 = History Depth Ctrl+L
+10 = Filter Ctrl+T
+11 = Font	
+12 = Real Time Accept Ctrl+R
+13 = Stop Receiving Ctrl+P
+14 = Can not find "%s"!
+15 = Find
+16 = This Program Need Windows NT!
+17 = Can not read file %s!
+18 = LogView for Windows
+19 = Sorry, there is no information that you want!
+20 = Note for File Read
+
+[LOGVIEW]
+|0 = &File
+40001 = &Open	Ctrl+O
+40021 = Sto&p Receiving		Ctrl+P
+40022 = &Real Time Accept	Ctrl+R
+40004 = E&xit	
+|1 = &Edit
+40016 = &Find	Ctrl+F
+40007 = Fil&ter	Ctrl+T
+40008 = Clear &Display	Ctrl+D
+|2 = F&ormat
+40009 = &Font
+40010 = &History Depth	Ctrl+L
+|2|4 = &Language
+|3 = &View
+40011 = A&uto Scroll	Ctrl+U
+40012 = Alway &On Top(&O)
+|4 = &Help
+40015 = &About
+40027 = Default
+
+[FILTER]
+0 = LogView Filter
+1 = OK
+2 = Cancel
+1041 = &Reset
+1006 = &Filter Inforamiton in term of filed:
+1036 = First Input the term "Filter Info in term of field", then enter next; The multiple filter conditons for this to log out information!
+1037 = &Select what you want to show:
+
+[HISTORYDEPTH]
+0 = LogView History Depth
+2 = Cancel
+1000 = &Reset
+1021 = &Apply
+1038 = A History Depth of 0 signifies a fixed depth limit = 5000. A minus data will be set to zero, and a data larger than 5000 will be set to 5000!
+1039 = History &Depth:
+
+[INFOFIND]
+0 = Find Information
+1 = &Find Next Item
+2 = Cancel
+1043 = Fi&nd Condition:
+
+[INF0ABOUT]
+0 = About LogView
+1 = OK
+1033 = LogView
+1035 = Copyright (C) 2006-2007 GRGBanking
+1044 = Version 1.0.0
+1045 = All right reserved.

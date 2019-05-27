@@ -1,0 +1,3 @@
+19:04:43.366 INFO: ->Enter OCASBase::iSetCommPara()
+19:04:43.366 SYSTEM: LogVersion(1. 0. 0. 0);DrvVersion(V1.0.6b26)
+19:04:43.390 ERROR: ->Leave OCASBase::iSetCommPara()=1,iPhyCode=17093,iLogicCode=17093

@@ -1,0 +1,30 @@
+10:49:02.448 INFO: ->Enter OCASBase::iSetCommPara()
+10:49:02.448 SYSTEM: LogVersion(1. 0. 0. 0);DrvVersion(V1.0.6b26)
+10:49:02.465 ERROR: ->Leave OCASBase::iSetCommPara()=1,iPhyCode=17093,iLogicCode=17093
+10:53:39.731 INFO: ->Enter OCASBase::iSetCommPara()
+10:53:39.731 SYSTEM: LogVersion(1. 0. 0. 0);DrvVersion(V1.0.6b26)
+10:53:39.737 ERROR: ->Leave OCASBase::iSetCommPara()=1,iPhyCode=17093,iLogicCode=17093
+10:58:03.216 INFO: ->Enter OCASBase::iSetCommPara()
+10:58:03.216 SYSTEM: LogVersion(1. 0. 0. 0);DrvVersion(V1.0.6b26)
+10:58:03.221 ERROR: ->Leave OCASBase::iSetCommPara()=1,iPhyCode=17093,iLogicCode=17093
+13:51:23.844 INFO: ->Enter OCASBase::iSetCommPara()
+13:51:23.844 SYSTEM: LogVersion(1. 0. 0. 0);DrvVersion(V1.0.6b26)
+13:51:23.849 ERROR: ->Leave OCASBase::iSetCommPara()=1,iPhyCode=17093,iLogicCode=17093
+14:16:23.559 INFO: ->Enter OCASBase::iSetCommPara()
+14:16:23.559 SYSTEM: LogVersion(1. 0. 0. 0);DrvVersion(V1.0.6b26)
+14:16:23.564 ERROR: ->Leave OCASBase::iSetCommPara()=1,iPhyCode=17093,iLogicCode=17093
+14:20:29.241 INFO: ->Enter OCASBase::iSetCommPara()
+14:20:29.241 SYSTEM: LogVersion(1. 0. 0. 0);DrvVersion(V1.0.6b26)
+14:20:29.245 ERROR: ->Leave OCASBase::iSetCommPara()=1,iPhyCode=17093,iLogicCode=17093
+14:24:56.927 INFO: ->Enter OCASBase::iSetCommPara()
+14:24:56.927 SYSTEM: LogVersion(1. 0. 0. 0);DrvVersion(V1.0.6b26)
+14:24:56.932 ERROR: ->Leave OCASBase::iSetCommPara()=1,iPhyCode=17093,iLogicCode=17093
+14:27:56.133 INFO: ->Enter OCASBase::iSetCommPara()
+14:27:56.133 SYSTEM: LogVersion(1. 0. 0. 0);DrvVersion(V1.0.6b26)
+14:27:56.137 ERROR: ->Leave OCASBase::iSetCommPara()=1,iPhyCode=17093,iLogicCode=17093
+14:37:10.022 INFO: ->Enter OCASBase::iSetCommPara()
+14:37:10.022 SYSTEM: LogVersion(1. 0. 0. 0);DrvVersion(V1.0.6b26)
+14:37:10.026 ERROR: ->Leave OCASBase::iSetCommPara()=1,iPhyCode=17093,iLogicCode=17093
+17:15:51.230 INFO: ->Enter OCASBase::iSetCommPara()
+17:15:51.230 SYSTEM: LogVersion(1. 0. 0. 0);DrvVersion(V1.0.6b26)
+17:15:51.234 ERROR: ->Leave OCASBase::iSetCommPara()=1,iPhyCode=17093,iLogicCode=17093
