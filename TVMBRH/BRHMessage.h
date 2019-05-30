@@ -7,12 +7,21 @@
 void  BRH_API BRH_SetStopAcceptFlag(bool flag);
 void  BRH_API BRH_SetAcceptFlag(bool flag);
 
+//TH 命令父类
+class BRH_API CBRHCommands: public CCommand
+{
+public:
+	CBRHCommands(void){}
+	~CBRHCommands(){}
+public:
+	long ExecuteCommand()=0;
+};
 
 //////////////////////////纸币循环设备命令////////////////////////////////////////////////////////////
 /** 
 @brief   BRH打开命令
 */
-class BRH_API CBRHOpen :	public CCommand
+class BRH_API CBRHOpen :	public CBRHCommands
 {
 public:
 	CBRHOpen(int port, int BaudRate, CString logPath, CString logName);
@@ -29,7 +38,7 @@ private:
 /** 
 @brief   BRH关闭命令
 */
-class BRH_API CBRHClose :	public CCommand
+class BRH_API CBRHClose :	public CBRHCommands
 {
 public:
 	CBRHClose();
@@ -41,7 +50,7 @@ public:
 /** 
 @brief   BRH复位命令
 */
-class BRH_API CBRHReset :	public CCommand
+class BRH_API CBRHReset :	public CBRHCommands
 {
 public:
 	CBRHReset(int iMode, int iRetryTimes, tBncInitNumInfo* pNumInfo,tBncDevReturn* p_psStatus);
@@ -58,7 +67,7 @@ private:
 /** 
 @brief   BRH重启命令
 */
-class BRH_API CBRHReboot :	public CCommand
+class BRH_API CBRHReboot :	public CBRHCommands
 {
 public:
 	CBRHReboot();
@@ -70,7 +79,7 @@ public:
 /** 
 @brief   BRH获取状态命令
 */
-class BRH_API CBRHGetStatus :	public CCommand
+class BRH_API CBRHGetStatus :	public CBRHCommands
 {
 public:
 	CBRHGetStatus();
@@ -85,7 +94,7 @@ private:
 /** 
 @brief   BRH获取详细状态命令
 */
-class BRH_API CBRHGetSystemStatus :	public CCommand
+class BRH_API CBRHGetSystemStatus :	public CBRHCommands
 {
 public:
 	CBRHGetSystemStatus();
@@ -100,7 +109,7 @@ private:
 /** 
 @brief   BRH取消操作命令
 */
-class BRH_API CBRHCancel :	public CCommand
+class BRH_API CBRHCancel :	public CBRHCommands
 {
 public:
 	CBRHCancel();
@@ -112,7 +121,7 @@ public:
 /** 
 @brief   BRH清空循环找零箱或补币箱命令
 */
-class BRH_API CBRHEmpty :	public CCommand
+class BRH_API CBRHEmpty :	public CBRHCommands
 {
 public:
 	CBRHEmpty(char* pcuName, BOOL toFloat);
@@ -130,7 +139,7 @@ private:
 /** 
 @brief   BRH清空暂存中的钞票到循环找零箱或钱箱命令
 */
-class BRH_API CBRHReject :	public CCommand
+class BRH_API CBRHReject :	public CBRHCommands
 {
 public:
 	CBRHReject();
@@ -145,7 +154,7 @@ private:
 /** 
 @brief   BRH自检
 */
-class BRH_API CBRHSelfTest :	public CCommand
+class BRH_API CBRHSelfTest :	public CBRHCommands
 {
 public:
 	CBRHSelfTest();
@@ -157,7 +166,7 @@ public:
 /** 
 @brief   BRH预备所有模块，使可卸下
 */
-class BRH_API CBRHPark :	public CCommand
+class BRH_API CBRHPark :	public CBRHCommands
 {
 public:
 	CBRHPark();
@@ -169,7 +178,7 @@ public:
 /** 
 @brief   BRH取消等待用户取走钞票
 */
-class BRH_API CBRHCancelWaitingCashTaken :	public CCommand
+class BRH_API CBRHCancelWaitingCashTaken :	public CBRHCommands
 {
 public:
 	CBRHCancelWaitingCashTaken();
@@ -181,7 +190,7 @@ public:
 /** 
 @brief   BRH开始接收钞票
 */
-class BRH_API CBRHCashInStart :	public CCommand
+class BRH_API CBRHCashInStart :	public CBRHCommands
 {
 public:
 	CBRHCashInStart();
@@ -195,7 +204,7 @@ private:
 /** 
 @brief   BRH接受钞票，移动到暂存
 */
-class BRH_API CBRHCashIn :	public CCommand
+class BRH_API CBRHCashIn :	public CBRHCommands
 {
 public:
 	CBRHCashIn();
@@ -211,7 +220,7 @@ private:
 /** 
 @brief   BRH退出本次接受的所有钞票
 */
-class BRH_API CBRHCashInRollback :	public CCommand
+class BRH_API CBRHCashInRollback :	public CBRHCommands
 {
 public:
 	CBRHCashInRollback();
@@ -226,7 +235,7 @@ private:
 /** 
 @brief   BRH结束接受钞票
 */
-class BRH_API CBRHCashInEnd :	public CCommand 
+class BRH_API CBRHCashInEnd :	public CBRHCommands 
 {
 public:
 	CBRHCashInEnd();
@@ -242,7 +251,7 @@ private:
 /** 
 @brief   BRH退钞（用于钞票未识别）
 */
-class BRH_API CBRHEject :	public CCommand
+class BRH_API CBRHEject :	public CBRHCommands
 {
 public:
 	CBRHEject();
@@ -257,7 +266,7 @@ private:
 /** 
 @brief   BRH找零请求
 */
-class BRH_API CBRHDispenseRequest :	public CCommand
+class BRH_API CBRHDispenseRequest :	public CBRHCommands
 {
 public:
 	CBRHDispenseRequest(tBncChangeNum *pChangeNum, tBncDevReturn *pDevStatus);
@@ -277,7 +286,7 @@ private:
 /** 
 @brief   BRH回收找零的钞票
 */
-class BRH_API CBRHRetract :	public CCommand
+class BRH_API CBRHRetract :	public CBRHCommands
 {
 public:
 	CBRHRetract();
@@ -292,7 +301,7 @@ private:
 /** 
 @brief   BRH获取现金单元信息
 */
-class BRH_API CBRHQueryCashUnit :	public CCommand
+class BRH_API CBRHQueryCashUnit :	public CBRHCommands
 {
 public:
 	CBRHQueryCashUnit();
@@ -307,7 +316,7 @@ private:
 /** 
 @brief   BRH更新现金单元
 */
-class BRH_API CBRHUpdateCashUnit :	public CCommand
+class BRH_API CBRHUpdateCashUnit :	public CBRHCommands
 {
 public:
 	CBRHUpdateCashUnit(UINT uiSlotID,tBncBillBoxInfo *pBillBoxInfo);
@@ -323,7 +332,7 @@ private:
 /** 
 @brief   BRH获取面值
 */
-class BRH_API CBRHQueryDenominations :	public CCommand
+class BRH_API CBRHQueryDenominations :	public CBRHCommands
 {
 public:
 	CBRHQueryDenominations(tBncSetInhibitList *p_psBuyTicketSetInhibitList, tBncSetInhibitList *p_psRechargeSetInhibitList);
@@ -345,7 +354,7 @@ private:
 /** 
 @brief   BRH更新面值
 */
-class BRH_API CBRHUpdateDenominations :	public CCommand
+class BRH_API CBRHUpdateDenominations :	public CBRHCommands
 {
 public:
 	CBRHUpdateDenominations(tBncSetInhibitList *p_psBuyTicketSetInhibitList, tBncSetInhibitList *p_psRechargeSetInhibitList);
@@ -361,7 +370,7 @@ private:
 /**
  @brief	组合命令——等待投入识别（V1+ST）
 */
-class BRH_API CBRHOpenAndValidate : public CCommand
+class BRH_API CBRHOpenAndValidate : public CBRHCommands
 {
 public:
 	CBRHOpenAndValidate();
@@ -387,7 +396,7 @@ private:
 /*
  @brief 设置箱子面额配置信息
 */
-class BRH_API CBRHSetCashType : public CCommand
+class BRH_API CBRHSetCashType : public CBRHCommands
 {
 public:
 	CBRHSetCashType(BNR_MODULE_ID boxId,UINT faceValue);
@@ -399,7 +408,7 @@ private:
 	UINT m_cashTypeInfo;
 };
 
-class BRH_API CBRHEncash : public CCommand
+class BRH_API CBRHEncash : public CBRHCommands
 {
 public:
 	CBRHEncash();

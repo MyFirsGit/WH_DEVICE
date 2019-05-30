@@ -935,9 +935,9 @@ bool CInitSvc::InitializeStatusDisplay()
 {
 	try
 	{	
-		theSTATUS_DISPLAYER.Connect();
-		//if(TRUE/*theAPP_SESSION.IsFirstRun()*/){
-		theSTATUS_DISPLAYER.Init();
+		//theSTATUS_DISPLAYER.Connect();
+		////if(TRUE/*theAPP_SESSION.IsFirstRun()*/){
+		//theSTATUS_DISPLAYER.Init();
 		//}
 	}
 	catch (CSysException& e){
