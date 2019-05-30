@@ -7,7 +7,6 @@
 void  BRH_API BRH_SetStopAcceptFlag(bool flag);
 void  BRH_API BRH_SetAcceptFlag(bool flag);
 
-
 //////////////////////////纸币循环设备命令////////////////////////////////////////////////////////////
 /** 
 @brief   BRH打开命令

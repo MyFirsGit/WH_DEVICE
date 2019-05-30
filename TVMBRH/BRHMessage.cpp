@@ -1817,8 +1817,8 @@ long CBRHUpdateDenominations::IsValidCommand()
 //////////////////////////////////////////////////////////////////////////
 long CBRHUpdateDenominations::ExecuteCommand()
 {
-	tBncDevReturn * p_psStatus;
-	long lCompleteCode = BNC_SetPrevalue(&m_psBuyTicketSetInhibitList, m_psRechargeSetInhibitList, p_psStatus);
+	tBncDevReturn  p_psStatus;
+	long lCompleteCode = BNC_SetPrevalue(&m_psBuyTicketSetInhibitList, m_psRechargeSetInhibitList,&p_psStatus);
 	OnComplete(lCompleteCode);
 	return lCompleteCode;
 }
@@ -1913,7 +1913,7 @@ long CBRHOpenAndValidate::ExecuteCommand(void)
 {
 	long lRet = 1;
 	lRet = OpenAndValidateFunction();
-	//this->OnComplete(lRet);
+	this->OnComplete(lRet);
 	return lRet;
 }
 
