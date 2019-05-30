@@ -31,7 +31,7 @@ void  BRH_SetStopAcceptFlag(bool flag)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHOpen::CBRHOpen(int port, int BaudRate, CString logPath, CString logName):CBRHCommands()
+CBRHOpen::CBRHOpen(int port, int BaudRate, CString logPath, CString logName):CCommand()
 {
 	m_port = port;
 	m_BaudRate =BaudRate;
@@ -97,7 +97,7 @@ long CBRHOpen::ExecuteCommand(void)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHClose::CBRHClose():CBRHCommands()
+CBRHClose::CBRHClose():CCommand()
 {						   
 }
 //////////////////////////////////////////////////////////////////////////
@@ -158,7 +158,7 @@ long CBRHClose::ExecuteCommand(void)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHReset::CBRHReset(int iMode, int iRetryTimes, tBncInitNumInfo* pNumInfo,tBncDevReturn* p_psStatus):CBRHCommands()
+CBRHReset::CBRHReset(int iMode, int iRetryTimes, tBncInitNumInfo* pNumInfo,tBncDevReturn* p_psStatus):CCommand()
 {
 	m_iMode = iMode;
 	m_iRetryTimes = iRetryTimes;
@@ -225,7 +225,7 @@ long CBRHReset::ExecuteCommand()
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHReboot::CBRHReboot():CBRHCommands()
+CBRHReboot::CBRHReboot():CCommand()
 {
 }
 //////////////////////////////////////////////////////////////////////////
@@ -288,7 +288,7 @@ long CBRHReboot::ExecuteCommand(void)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHGetStatus::CBRHGetStatus():CBRHCommands()
+CBRHGetStatus::CBRHGetStatus():CCommand()
 {
 }
 //////////////////////////////////////////////////////////////////////////
@@ -380,7 +380,7 @@ void CBRHGetStatus::GetBRHResponse(tBncDevReturn* status)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHGetSystemStatus::CBRHGetSystemStatus():CBRHCommands()
+CBRHGetSystemStatus::CBRHGetSystemStatus():CCommand()
 {
 }
 //////////////////////////////////////////////////////////////////////////
@@ -469,7 +469,7 @@ void CBRHGetSystemStatus::GetBRHResponse(tBncSysDevStatus* status)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHCancel::CBRHCancel():CBRHCommands()
+CBRHCancel::CBRHCancel():CCommand()
 {
 }
 //////////////////////////////////////////////////////////////////////////
@@ -531,7 +531,7 @@ long CBRHCancel::ExecuteCommand()
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHEmpty::CBRHEmpty(char* pcuName, BOOL toFloat):CBRHCommands()
+CBRHEmpty::CBRHEmpty(char* pcuName, BOOL toFloat):CCommand()
 {
 	memset(m_pcuName,0, sizeof(m_pcuName));
 	strcpy(m_pcuName, pcuName);
@@ -612,7 +612,7 @@ void CBRHEmpty::GetResponse(tBncChangeNum* result){
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHReject::CBRHReject():CBRHCommands()
+CBRHReject::CBRHReject():CCommand()
 {
 }
 //////////////////////////////////////////////////////////////////////////
@@ -704,7 +704,7 @@ void CBRHReject::GetBRHResponse(UINT32* amount)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHSelfTest::CBRHSelfTest():CBRHCommands()
+CBRHSelfTest::CBRHSelfTest():CCommand()
 {
 }
 //////////////////////////////////////////////////////////////////////////
@@ -767,7 +767,7 @@ long CBRHSelfTest::ExecuteCommand(void)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHPark::CBRHPark():CBRHCommands()
+CBRHPark::CBRHPark():CCommand()
 {
 }
 //////////////////////////////////////////////////////////////////////////
@@ -830,7 +830,7 @@ long CBRHPark::ExecuteCommand(void)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHCancelWaitingCashTaken::CBRHCancelWaitingCashTaken():CBRHCommands()
+CBRHCancelWaitingCashTaken::CBRHCancelWaitingCashTaken():CCommand()
 {
 }
 //////////////////////////////////////////////////////////////////////////
@@ -893,7 +893,7 @@ long CBRHCancelWaitingCashTaken::ExecuteCommand(void)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHCashInStart::CBRHCashInStart():CBRHCommands()
+CBRHCashInStart::CBRHCashInStart():CCommand()
 {
 }
 //////////////////////////////////////////////////////////////////////////
@@ -954,7 +954,7 @@ long CBRHCashInStart::ExecuteCommand()
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHCashIn::CBRHCashIn():CBRHCommands()
+CBRHCashIn::CBRHCashIn():CCommand()
 {
 }
 //////////////////////////////////////////////////////////////////////////
@@ -1046,7 +1046,7 @@ void CBRHCashIn::GetBRHResponse(tBncCashInfo *p_psCashInfo,tBncDevReturn *p_psSt
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHCashInRollback::CBRHCashInRollback():CBRHCommands()
+CBRHCashInRollback::CBRHCashInRollback():CCommand()
 {
 }
 //////////////////////////////////////////////////////////////////////////
@@ -1137,7 +1137,7 @@ void CBRHCashInRollback::GetBRHResponse(UINT32* amount)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHCashInEnd::CBRHCashInEnd():CBRHCommands()
+CBRHCashInEnd::CBRHCashInEnd():CCommand()
 {
 	memset(&m_cashIntoInfo,0x00,sizeof(m_cashIntoInfo));
 }
@@ -1232,7 +1232,7 @@ void CBRHCashInEnd::GetBRHResponse(tBncEnCashInfo* intoInfo)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHEject::CBRHEject():CBRHCommands()
+CBRHEject::CBRHEject():CCommand()
 {
 }
 //////////////////////////////////////////////////////////////////////////
@@ -1323,7 +1323,7 @@ void CBRHEject::GetBRHResponse(UINT32* amount)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHDispenseRequest::CBRHDispenseRequest(tBncChangeNum *pChangeNum, tBncDevReturn *pDevStatus):CBRHCommands()
+CBRHDispenseRequest::CBRHDispenseRequest(tBncChangeNum *pChangeNum, tBncDevReturn *pDevStatus):CCommand()
 {
 	memcpy(&m_pChangeNum, pChangeNum, sizeof(tBncChangeNum));
 }
@@ -1407,7 +1407,7 @@ void CBRHDispenseRequest::GetResponse(CHANGE_RESULT* result){
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHRetract::CBRHRetract():CBRHCommands()
+CBRHRetract::CBRHRetract():CCommand()
 {
 }
 //////////////////////////////////////////////////////////////////////////
@@ -1498,7 +1498,7 @@ void CBRHRetract::GetBRHResponse(UINT32* amount)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHQueryCashUnit::CBRHQueryCashUnit():CBRHCommands()
+CBRHQueryCashUnit::CBRHQueryCashUnit():CCommand()
 {
 }
 //////////////////////////////////////////////////////////////////////////
@@ -1606,7 +1606,7 @@ void CBRHQueryCashUnit::GetBRHResponse(tBncBillBoxInfo* queryCashUnit)
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHUpdateCashUnit::CBRHUpdateCashUnit(UINT uiSlotID,tBncBillBoxInfo *pBillBoxInfo):CBRHCommands()
+CBRHUpdateCashUnit::CBRHUpdateCashUnit(UINT uiSlotID,tBncBillBoxInfo *pBillBoxInfo):CCommand()
 {
 	m_uiSlotID = uiSlotID;
 	m_pBillBoxInfo = pBillBoxInfo;
@@ -1673,7 +1673,7 @@ long CBRHUpdateCashUnit::ExecuteCommand()
 */
 //////////////////////////////////////////////////////////////////////////
 CBRHQueryDenominations::CBRHQueryDenominations(tBncSetInhibitList *p_psBuyTicketSetInhibitList, 
-												tBncSetInhibitList *p_psRechargeSetInhibitList):CBRHCommands()
+												tBncSetInhibitList *p_psRechargeSetInhibitList):CCommand()
 {
 	m_psBuyTicketSetInhibitList = p_psBuyTicketSetInhibitList;
 	m_psRechargeSetInhibitList = p_psRechargeSetInhibitList;
@@ -1769,7 +1769,7 @@ void CBRHQueryDenominations::GetBRHResponse(tBncSetInhibitList *BuyTicketSetInhi
 @exception  无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHUpdateDenominations::CBRHUpdateDenominations(tBncSetInhibitList *p_psBuyTicketSetInhibitList, tBncSetInhibitList *p_psRechargeSetInhibitList):CBRHCommands()
+CBRHUpdateDenominations::CBRHUpdateDenominations(tBncSetInhibitList *p_psBuyTicketSetInhibitList, tBncSetInhibitList *p_psRechargeSetInhibitList):CCommand()
 {
 	memcpy(&m_psBuyTicketSetInhibitList, p_psBuyTicketSetInhibitList, sizeof(tBncSetInhibitList));
 	memcpy(&m_psRechargeSetInhibitList, p_psRechargeSetInhibitList, sizeof(tBncSetInhibitList));
@@ -1817,8 +1817,8 @@ long CBRHUpdateDenominations::IsValidCommand()
 //////////////////////////////////////////////////////////////////////////
 long CBRHUpdateDenominations::ExecuteCommand()
 {
-	tBncDevReturn  p_psStatus;
-	long lCompleteCode = BNC_SetPrevalue(&m_psBuyTicketSetInhibitList, m_psRechargeSetInhibitList, &p_psStatus);
+	tBncDevReturn * p_psStatus;
+	long lCompleteCode = BNC_SetPrevalue(&m_psBuyTicketSetInhibitList, m_psRechargeSetInhibitList, p_psStatus);
 	OnComplete(lCompleteCode);
 	return lCompleteCode;
 }
@@ -1838,7 +1838,7 @@ void  BRH_SetAcceptFlag(bool flag)
 // @exception	无
 //*/
 //////////////////////////////////////////////////////////////////////////
-CBRHOpenAndValidate::CBRHOpenAndValidate(tBncSetInhibitList& brhTable,long lTranType):CBRHCommands()
+CBRHOpenAndValidate::CBRHOpenAndValidate(tBncSetInhibitList& brhTable,long lTranType):CCommand()
 {
 	//done_phase = DONE_P()SE_READY;
 	//memcpy(&m_BuyTicketSetInhibitList,&brhTable,sizeof(tBncSetInhibitList));
@@ -1868,9 +1868,9 @@ CBRHOpenAndValidate::CBRHOpenAndValidate(tBncSetInhibitList& brhTable,long lTran
  @exception	无
 */
 //////////////////////////////////////////////////////////////////////////
-CBRHOpenAndValidate::CBRHOpenAndValidate():CBRHCommands()
+CBRHOpenAndValidate::CBRHOpenAndValidate():CCommand()
 {
-	//done_phase CBRHCommandsHASE_READY;
+	//done_phase CCommandHASE_READY;
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -1913,7 +1913,7 @@ long CBRHOpenAndValidate::ExecuteCommand(void)
 {
 	long lRet = 1;
 	lRet = OpenAndValidateFunction();
-	this->OnComplete(lRet);
+	//this->OnComplete(lRet);
 	return lRet;
 }
 
